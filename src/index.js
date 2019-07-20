@@ -7,23 +7,23 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const originalState = {
-        feelings: 0,
-        Understanding: 0,
-        Support: 0,
-        Comments: '',
-      }
+// const originalState = {
+//         Feelings: 0,
+//         Understanding: 0,
+//         Support: 0,
+//         Comments: '',
+//       }
 
-const feelings = (state = originalState, action) =>{
+const totalReview = (state = [], action) =>{
     if(action.type === 'ADD_FEELING') {
-        return [...state, action.payload]
+        return {...state, Feelings: action.payload}
     }
     return state;
 }
 
 const reduxStore = createStore(
     combineReducers({
-      feelings,
+        totalReview,
     
     }),
     applyMiddleware(logger)

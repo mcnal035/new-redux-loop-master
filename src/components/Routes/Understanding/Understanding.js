@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-
+import {withRouter} from 'react-router'
 
 
 class Understanding extends Component {
@@ -18,4 +18,8 @@ class Understanding extends Component {
   }
 }
 
-export default connect()(Understanding);
+const mapStateToProps = (reduxStore) =>({
+  reduxStore
+})
+
+export default withRouter(connect(mapStateToProps)(Understanding));

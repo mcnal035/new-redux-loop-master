@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router'
 
 class Review extends Component {
 
@@ -13,6 +14,7 @@ class Review extends Component {
 
 
     render(){
+      
         return (
             <>
         <h2>Review Your Feedback</h2>
@@ -29,4 +31,9 @@ class Review extends Component {
     }
 
 }
-export default connect()(Review);
+
+const mapReduxStoreToProps = (reduxStore) => ({
+    reduxStore
+})
+
+export default withRouter(connect()(Review));
