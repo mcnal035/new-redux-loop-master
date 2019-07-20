@@ -7,18 +7,26 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const state = {
-  feelings: 0,
-  Understanding: 0,
-  Support: 0,
-  Comments: '',
+// const state = {
+//         feedBack: {
+//         feelings: '',
+//         Understanding: '',
+//         Support: '',
+//         Comments: '',
+
+//         }
+//       }
+
+const feelings = (state=[], action) =>{
+    if(action.type === 'ADD_FEELING') {
+        return [...state, action.payload]
+    }
+    return state;
 }
-
-
 
 const reduxStore = createStore(
     combineReducers({
-      // all reducers will go here...
+      feelings,
     
     }),
     applyMiddleware(logger)
