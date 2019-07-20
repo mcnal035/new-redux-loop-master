@@ -5,7 +5,6 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "axios": "^0.17.1",
-    "install": "^0.13.0",
     "npm": "^6.10.1",
     "pg": "^7.4.1",
     "react": "^16.8.6",

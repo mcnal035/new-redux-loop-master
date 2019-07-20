@@ -7,16 +7,16 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-// const originalState = {
-//         Feelings: 0,
-//         Understanding: 0,
-//         Support: 0,
-//         Comments: '',
-//       }
+const originalState = [{
+        Feeling: 0,
+        Understanding: 0,
+        Support: 0,
+        Comments: '',
+      }]
 
-const totalReview = (state = [], action) =>{
+const totalReview = (state = originalState, action) =>{
     if(action.type === 'ADD_FEELING') {
-        return {...state, Feelings: action.payload}
+        return [...state, action.payload]
     }
     return state;
 }
