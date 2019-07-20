@@ -7,17 +7,14 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-// const state = {
-//         feedBack: {
-//         feelings: '',
-//         Understanding: '',
-//         Support: '',
-//         Comments: '',
+const originalState = {
+        feelings: 0,
+        Understanding: 0,
+        Support: 0,
+        Comments: '',
+      }
 
-//         }
-//       }
-
-const feelings = (state=[], action) =>{
+const feelings = (state = originalState, action) =>{
     if(action.type === 'ADD_FEELING') {
         return [...state, action.payload]
     }

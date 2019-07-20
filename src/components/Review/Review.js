@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
-
-class FormList extends Component {
+class Review extends Component {
 
     handleClick = () => {
         // Do some JavaScript fun stuff
@@ -29,4 +29,4 @@ class FormList extends Component {
     }
 
 }
-export default FormList;
+export default connect()(Review);

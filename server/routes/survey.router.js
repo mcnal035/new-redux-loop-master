@@ -5,17 +5,17 @@ const pool = require('../modules/pool');
 
 
 router.post('/', (req,res)=>{
-let newSurvey = req.body;
+let feedback = req.body;
 console.log(`adding feedback`, newSurvey);
 
-let queryText = `INSERT INTO "feedback" ("id", feeling", "understanding", "support", "comments", "flagged")
-                 VALUES ($1, $2, $3, $4, $5, $6);`;
-pool.query(queryText, [newSurvey.id, newSurvey.feeling, newSurvey.understanding, newSurvey.support, newSurvey.comments, newSurvey.flagged])
+let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+                 VALUES ($1, $2, $3, $4);`;
+pool.query(queryText, [feedback.Feeling, feedback.Understanding, feedback.Support, feedback.Comments, feedback.Flagged])
   .then(result => {
     res.sendStatus(201);
   })
   .catch(error => {
-    console.log(`Error adding new book`, error);
+    console.log(`Error with POST`, error);
     res.sendStatus(500);
   });
 });

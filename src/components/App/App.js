@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import FormList from '../FormList/FormList'
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Feeling from '../Feeling/Feeling'
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import Support from '../Support/Support'
+import Understanding from '../Understanding/Understanding'
+import Comments from '../Comments/Comments'
+
 
 
 class App extends Component {
@@ -16,11 +19,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         </header>
-        <Route path='/feelings' component={Feeling} />
-        <Route path='/Feelings' component={Feeling} />
+        
+        <Route exact path='/' Component={Feeling} />
+        <Route exact path='/Support' Component={Support} />
+        <Route exact path='/Understanding' Component={Understanding} />
+        <Route exact path='/Comments' Component={Comments}/>
         <br/>
-        <Feeling />
-        <FormList />
       </div>
       </Router>
     );

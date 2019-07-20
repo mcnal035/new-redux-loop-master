@@ -1,39 +1,33 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-
+import Review from '../Review/Review';
 
 
 class Feeling extends Component {
 
     state = {
-            feedBack: {
             Feelings: 0,
-            Understanding: '',
-            Support: '',
-            Comments: '',
-
             }
-          }
     
     
     handleChangeFor = (propertyName, event) => {
         event.preventDefault();
         // Do some JavaScript fun stuff
         this.setState({
-            ...this.state.feedBack,
             [propertyName]: event.target.value,
         })
         console.log('adding input', event.target.value )
     
-        // then programmatically navigate to home
-        // this.props.history.push('/');
+        //then programmatically navigate to home
+       
       }
 
 
      handleSubmit = (event) =>{
          event.preventDefault();
          console.log('clicked on add handleSubmit');
-         this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feedBack})
+         this.props.dispatch({type: 'ADD_FEELING', payload: this.state.Feelings})
+         this.props.history.push('/Support');
      }
 
 
@@ -49,11 +43,12 @@ class Feeling extends Component {
         </header>
         <form onSubmit={this.handleSubmit}>
         <input type="number" placeholder="feeling" 
-            value={this.state.feedBack.feelings}
+            value={this.state.feelings}
             onChange={(event) => this.handleChangeFor('feelings', event)}/>
         <br/>
         <button>NEXT</button>
         </form>
+        <Review />
       </div>
     );
   }
