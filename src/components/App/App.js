@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { HashRouter as Router, Route} from 'react-router-dom';
 //import { withRouter } from 'react-router-dom';
-import {connect} from 'react-redux';
+
 
 //routes
 import Feeling from '../Feeling/Feeling'
