@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import { HashRouter as Router, Route} from 'react-router-dom';
-import { connect } from 'react-redux';
-import {withRouter} from 'react-router-dom';
+//import { withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
 
 //routes
-import Feeling from '../Routes/Feeling/Feeling'
-import Understanding from '../Routes/Understanding/Understanding'
-import Support from '../Routes/Support/Support'
+import Feeling from '../Feeling/Feeling'
+import Understanding from '../Understanding/Understanding'
+import Support from '../Support/Support'
+import Main from '../Main/Main'
+import Comments from '../Comments/Comments'
 
 
 // import Comments from '../Comments/Comments'
@@ -15,25 +17,34 @@ import Support from '../Routes/Support/Support'
 
 class App extends Component {
 
+  handleSubmit = (event)=>{
+    event.preventDefault();
+    //console.log('clicking on handleSubmit')
+     this.props.history.push('/feeling');
+  }
+
   render() {
+   
+    
 
     return (
-          <>
-            <section>
-          <Router> 
-          <Route path='/' exact Component={Feeling} />
-          <Route path='/Understanding/' Component={Understanding} />
-          <Route path='/Support/' Component={Support} />
-          </Router>
-          </section>
-          <Feeling />
-        <br/>
-        </>
-
-  
+      <>
+      
+      <Router> 
+          
+         
+          {/* <Route exact path='/' component={Main} /> */}
+          <Route  path='/' render={(props) => <Feeling {...props} isAuthed={true}/>} />
+          <Route path='/Understanding/'render= {(props) => <Understanding {...props} isAuthed={true}/>} />
+          <Route path='/Support/' render={(props) => <Support {...props} isAuthed={true}/>} />
+          <Route path='/Comments/' render={(props) => <Comments {...props} isAuthed={true}/>} />
+       
+        
+      </Router>
+  </>
     );
   }
 }
 
 
-export default withRouter()e(App);
+export default App;

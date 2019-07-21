@@ -17,6 +17,12 @@ const originalState = [{
 const totalReview = (state = originalState, action) =>{
     if(action.type === 'ADD_FEELING') {
         return [...state, action.payload]
+    } else if(action.type === 'ADD_UNDERSTANDING'){
+        return[...state, action.payload]
+    } else if(action.type === 'ADD_SUPPORT'){
+        return[...state, action.payload]
+    } else if(action.type === 'ADD_COMMENTS'){
+        return[...state, action.payload]
     }
     return state;
 }
@@ -28,9 +34,6 @@ const reduxStore = createStore(
     }),
     applyMiddleware(logger)
   );
-  
-
-
 
 ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
