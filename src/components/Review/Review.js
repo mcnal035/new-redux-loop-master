@@ -16,9 +16,37 @@ class Review extends Component {
         
       }
 
+      reviewComplete = () =>{
+          if(this.props.reduxStore.totalReview.feeling === 0 ){
+              return false;
+          }
+          if(this.props.reduxStore.totalReview.understanding === 0 ){
+            return false;
+        }
+        if(this.props.reduxStore.totalReview.support === 0 ){
+            return false;
+        }
+        if(this.props.reduxStore.totalReview.comments === '' ){
+            return false;
+        }
+        return true;
+      }
+
+      showButton = () => {
+      if (!this.reviewComplete()) {
+        return <button>Incomplete</button>
+     } else { 
+         return <button onClick={this.handleClick}>Complete</button>
+     }
+    }
 
     render(){
+        //need to create an if else statement.
+        
+       
+        
        let list= this.props.reduxStore.totalReview
+
         return (
         <section className="Review">
         <div>
@@ -30,7 +58,7 @@ class Review extends Component {
             <p>Comments:{list.comments}</p> 
   
             
-            <button onClick={this.handleClick}>Incomplete</button>
+           {this.showButton()}
          </div>
         </section>
         

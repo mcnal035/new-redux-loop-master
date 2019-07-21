@@ -11,6 +11,7 @@ import Support from '../Support/Support'
 import Main from '../Main/Main'
 import Comments from '../Comments/Comments'
 import Review from '../Review/Review'
+import Success from '../Success/Success';
 
 
 // import Comments from '../Comments/Comments'
@@ -36,6 +37,7 @@ class App extends Component {
           <Route path='/Support/' render={(props) => <Support {...props} isAuthed={true}/>} />
           <Route path='/Comments/' render={(props) => <Comments {...props} isAuthed={true}/>} />
           <Route path='/Review/' render={(props) => <Review {...props} isAuthed={true}/>} />
+          <Route path='/Success/' render={(props) => <Success {...props} isAuthed={true}/>} />
        
         
       </Router>
