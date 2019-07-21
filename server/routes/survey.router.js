@@ -5,12 +5,12 @@ const pool = require('../modules/pool');
 
 
 router.post('/', (req,res)=>{
-let feedback = req.body;
-console.log(`adding feedback`, newSurvey);
+let survey = req.body;
+console.log(`adding feedback`, survey);
 
-let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+let queryText = `INSERT INTO "feedback" ("comments", "feeling", "understanding", "support" )
                  VALUES ($1, $2, $3, $4);`;
-pool.query(queryText, [feedback.Feeling, feedback.Understanding, feedback.Support, feedback.Comments, feedback.Flagged])
+pool.query(queryText, [survey.comments, survey.feeling, survey.understanding, survey.support])
   .then(result => {
     res.sendStatus(201);
   })

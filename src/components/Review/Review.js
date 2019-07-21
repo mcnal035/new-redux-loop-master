@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
+import axios from 'axios';
 
 class Review extends Component {
 
     handleClick = () => {
-        // Do some JavaScript fun stuff
-        alert(`Going back to home page...`);
-    
-        // then programmatically navigate to home
-        this.props.history.push('/');
+        let finalList = this.props.reduxStore.totalReview
+        axios.post('/feedback', finalList)
+        .then((response) => {
+            console.log('response',response);
+        }).catch((error)=>{
+            console.log('in error on post', error);
+        })
+        
       }
 
 
