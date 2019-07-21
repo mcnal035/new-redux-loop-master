@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import './Review'
 
 class Review extends Component {
 
@@ -19,21 +20,20 @@ class Review extends Component {
     render(){
        let list= this.props.reduxStore.totalReview
         return (
-            <>
+        <section className="Review">
+        <div>
         <h2>Review Your Feedback</h2>
             
+            <p>Feelings:{list.feeling}</p> 
+            <p>Understanding:{list.understanding}</p> 
+            <p>Support:{list.support}</p> 
+            <p>Comments:{list.comments}</p> 
+  
+            
+            <button onClick={this.handleClick}>Incomplete</button>
+         </div>
+        </section>
         
-            <ul>
-              <li>Feelings:{list.feeling}</li> 
-              <li>Understanding:{list.understanding}</li> 
-             <li>Support:{list.support}</li>
-             <li>Comments:{list.comments}</li>
-             </ul>
-         
-           
-        <br/>
-        <button onClick={this.handleClick}>Incomplete</button>
-        </>
         );
     }
 

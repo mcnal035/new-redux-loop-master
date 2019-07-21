@@ -13,7 +13,7 @@ class Main extends Component {
         return(
             <>
             <div className="App">
-            <header className="App-header">
+            <header>
                  <h1 className="App-title">Feedback!</h1>
                  <h4><i>Getting Started</i></h4>
             </header>

@@ -39,7 +39,10 @@ class Feeling extends Component {
       <div className="App">
          
           {JSON.stringify(this.state.feeling)}
+          <header className="App-header">
+          <h1 className="App-title">Feedback!</h1>
           <h4><i>How Are You Feeling Today?</i></h4>
+          </header>
         <form onSubmit={this.handleSubmit}>
         <input type="number" placeholder="Feeling" 
             // value={this.state.Feelings}
