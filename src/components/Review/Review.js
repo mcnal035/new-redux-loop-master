@@ -14,18 +14,22 @@ class Review extends Component {
 
 
     render(){
-        const Feedback =this.props.reduxStore.totalReview;
+       let list= this.props.reduxStore.totalReview
         return (
             <>
         <h2>Review Your Feedback</h2>
+            
         
-            <p>Feelings:{Feedback.Feeling}</p>
-            <p>Understanding:</p>
-            <p>Support:</p>
-            <p>Comments:</p>
-        
+            <ul>
+              <li>Feelings:{list.feeling}</li> 
+              <li>Understanding:{list.understanding}</li> 
+             <li>Support:{list.support}</li>
+             <li>Comments:{list.comments}</li>
+             </ul>
+         
+           
         <br/>
-        <button onClick={this.handleClick}>Go Home</button>
+        <button onClick={this.handleClick}>Incomplete</button>
         </>
         );
     }

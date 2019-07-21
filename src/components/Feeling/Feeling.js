@@ -5,19 +5,17 @@ import { withRouter } from 'react-router-dom';
 
 class Feeling extends Component {
     state = {
-      newFeeling: {
       feeling: 0,
-      }
+      
             }
     
 
     handleChangeFor = (PropertyName, event) => {
         // Do some JavaScript fun stuff
         this.setState({
-            newFeeling: {
-              ...this.state.newFeeling,
-              [PropertyName]: event.target.value,
-            }
+            feeling: 
+               event.target.value,
+            
         })
         console.log('handlechange for', )
         //then programmatically navigate to home
@@ -27,9 +25,9 @@ class Feeling extends Component {
       handleSubmit = (event) =>{
         this.props.history.push('/Understanding');
         event.preventDefault();
-        this.props.dispatch({type: 'ADD_FEELING', payload: this.state.newFeeling})
+        this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feeling})
        
-        console.log('clicked on add handleSubmit', this.state.newFeeling);
+        console.log('clicked on add handleSubmit', this.state.feeling);
     }
 
 

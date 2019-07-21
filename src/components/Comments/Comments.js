@@ -7,26 +7,25 @@ class Support extends Component {
 
 
   state = {
-    newFeeling: {
+     
      comments: '',
-    }
+    
           }
   
 
    handleSubmit = (event) =>{
-    this.props.history.push('/Main');
+    this.props.history.push('/Review');
     event.preventDefault();
-    this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.newFeeling})
+    this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.comments})
    
-    console.log('clicked on add handleSubmit', this.state.newFeeling);
+    console.log('clicked on add handleSubmit', this.state.comments);
 }
   handleChangeFor = (PropertyName, event) => {
      
       this.setState({
-          newFeeling: {
-            ...this.state.newFeeling,
-            [PropertyName]: event.target.value,
-          }
+          comments:
+             event.target.value,
+          
       })
      
     }

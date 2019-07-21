@@ -7,29 +7,27 @@ class Support extends Component {
 
 
   state = {
-    newFeeling: {
      support: 0,
-    }
           }
-  
+         
+         
+  handleChangeFor = (PropertyName, event) => {
+     
+            this.setState({
+                support: event.target.value,
+                
+            })
+           
+          }
 
    handleSubmit = (event) =>{
     this.props.history.push('/Comments');
     event.preventDefault();
-    this.props.dispatch({type: 'ADD_SUPPORT', payload: this.state.newFeeling})
+    this.props.dispatch({type: 'ADD_SUPPORT', payload: this.state.support})
    
-    console.log('clicked on add handleSubmit', this.state.newFeeling);
+    console.log('clicked on add handleSubmit', this.state.support);
 }
-  handleChangeFor = (PropertyName, event) => {
-     
-      this.setState({
-          newFeeling: {
-            ...this.state.newFeeling,
-            [PropertyName]: event.target.value,
-          }
-      })
-     
-    }
+
 
 
 
@@ -42,6 +40,7 @@ class Support extends Component {
           <h4><i>Dont Forget It!</i></h4>
         </header>
         <h2>How well Are you Being Support?</h2>
+        {JSON.stringify(this.state.support)}
         <form onSubmit={this.handleSubmit}>
         <input type="number" placeholder="Support" 
             // value={this.state.Feelings}
@@ -55,6 +54,7 @@ class Support extends Component {
     );
   }
 }
+
 const mapStateToProps = (reduxStore) =>({
   reduxStore
 })

@@ -7,23 +7,23 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const originalState = [{
-        Feeling: 0,
-        Understanding: 0,
-        Support: 0,
-        Comments: '',
-      }]
+const originalState = {
+        feeling: 0,
+        understanding: 0,
+        support: 0,
+        comments: '',
+      }
 
 const totalReview = (state = originalState, action) =>{
     if(action.type === 'ADD_FEELING') {
-        return [...state, action.payload]
+        return {...state, feeling: action.payload}
     } else if(action.type === 'ADD_UNDERSTANDING'){
-        return[...state, action.payload]
+        return {...state, understanding: action.payload}
     } else if(action.type === 'ADD_SUPPORT'){
-        return[...state, action.payload]
+        return {...state, support: action.payload}
     } else if(action.type === 'ADD_COMMENTS'){
-        return[...state, action.payload]
-    }
+        return {...state, comments: action.payload}
+    } 
     return state;
 }
 
