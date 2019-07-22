@@ -10,7 +10,8 @@ console.log(`adding feedback`, survey);
 
 let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments" )
                  VALUES ($1, $2, $3, $4);`;
-pool.query(queryText, [ survey.feeling, survey.understanding, survey.support, survey.comments])
+ let values = [survey.feeling, survey.understanding, survey.support, survey.comments]                
+pool.query(queryText, values)
   .then(result => {
     res.sendStatus(201);
   })

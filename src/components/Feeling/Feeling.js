@@ -6,15 +6,13 @@ import { withRouter } from 'react-router-dom';
 class Feeling extends Component {
     state = {
       feeling: 0,
-      
             }
-    
-
+    //sets the new value of feeling.
     handleChangeFor = (PropertyName, event) => {
         // Do some JavaScript fun stuff
         this.setState({
             feeling: 
-               event.target.value,
+                event.target.value,
             
         })
         console.log('handlechange for', )
@@ -39,7 +37,7 @@ class Feeling extends Component {
       
       <div className="App">
          
-          {JSON.stringify(this.state.feeling)}
+          {/* {JSON.stringify(this.state.feeling)} */}
           <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
           <h4><i>How Are You Feeling Today?</i></h4>

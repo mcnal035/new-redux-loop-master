@@ -4,15 +4,12 @@ import Review from '../Review/Review';
 import {withRouter} from 'react-router';
 
 class Support extends Component {
-
-
   state = {
-     
      comments: '',
-    
           }
   
-
+// function takes the comments and dispatches it to index. Then sends 
+        //you to the next page Review.
    handleSubmit = (event) =>{
     this.props.history.push('/Review');
     event.preventDefault();

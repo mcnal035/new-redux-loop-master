@@ -21,7 +21,7 @@ class Main extends Component {
 
     render() {
         let button;
-        if(() => !this.handleSubmit()){
+        if( () => this.handleSubmit()){
             button = <button onClick={this.handleSubmit}>Lets Start</button>
               
           } else {
