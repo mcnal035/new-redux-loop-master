@@ -21,7 +21,8 @@ class Feeling extends Component {
         //then programmatically navigate to home
       }
 
-
+        // function taked the feeling number and dispatches it to index. Then sends 
+        //you to the next page understanding.
       handleSubmit = (event) =>{
         this.props.history.push('/Understanding');
         event.preventDefault();

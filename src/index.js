@@ -13,17 +13,19 @@ const originalState = {
         support: 0,
         comments: '',
       }
-
+// function holds the information for the object. last else if returns an empty object to clear.
 const totalReview = (state = originalState, action) =>{
     if(action.type === 'ADD_FEELING') {
-        return {...state, feeling: action.payload}
+        return {...state, feeling: action.payload};
     } else if(action.type === 'ADD_UNDERSTANDING'){
-        return {...state, understanding: action.payload}
+        return {...state, understanding: action.payload};
     } else if(action.type === 'ADD_SUPPORT'){
-        return {...state, support: action.payload}
+        return {...state, support: action.payload};
     } else if(action.type === 'ADD_COMMENTS'){
-        return {...state, comments: action.payload}
-    } 
+        return {...state, comments: action.payload};
+    }  else if(action.type === 'CLEAR_FORM') {
+        return originalState;
+    }
     return state;
 }
 

@@ -9,7 +9,10 @@ class Review extends Component {
         let finalList = this.props.reduxStore.totalReview
         axios.post('/feedback', finalList)
         .then((response) => {
-            console.log('response',response);
+            console.log('response', response);
+            this.props.dispatch({type: 'CLEAR_FORM'});
+            this.props.history.push('/Success')
+
         }).catch((error)=>{
             console.log('in error on post', error);
         })
@@ -31,24 +34,24 @@ class Review extends Component {
         }
         return true;
       }
-
+      // this renders the buttong to show as complete
       showButton = () => {
       if (!this.reviewComplete()) {
         return <button>Incomplete</button>
      } else { 
-         return <button onClick={this.handleClick}>Complete</button>
+         return <button onClick={this.handleClick}>Click to Complete</button>
      }
     }
 
     render(){
-        //need to create an if else statement.
+        
         
        
-        
+        // figured out you can just call the reducer and then add them as they come in.
        let list= this.props.reduxStore.totalReview
 
         return (
-        <section className="Review">
+        <section className="App">
         <div>
         <h2>Review Your Feedback</h2>
             

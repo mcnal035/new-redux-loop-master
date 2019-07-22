@@ -8,9 +8,9 @@ router.post('/', (req,res)=>{
 let survey = req.body;
 console.log(`adding feedback`, survey);
 
-let queryText = `INSERT INTO "feedback" ("comments", "feeling", "understanding", "support" )
+let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments" )
                  VALUES ($1, $2, $3, $4);`;
-pool.query(queryText, [survey.comments, survey.feeling, survey.understanding, survey.support])
+pool.query(queryText, [ survey.feeling, survey.understanding, survey.support, survey.comments])
   .then(result => {
     res.sendStatus(201);
   })
