@@ -38,7 +38,7 @@ class Understanding extends Component {
         <h2>How well are you understanding the content!</h2>
         <br/>
         <div className="App">
-          {JSON.stringify(this.state.understanding)}
+          {/* {JSON.stringify(this.state.understanding)} */}
         <form onSubmit={this.handleSubmit}>
         <input type="number" placeholder="Understanding" 
             //  value={this.understanding}

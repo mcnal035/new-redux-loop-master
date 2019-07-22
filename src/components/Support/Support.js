@@ -40,7 +40,7 @@ class Support extends Component {
           <h4><i>Dont Forget It!</i></h4>
         </header>
         <h2>How well Are you Being Support?</h2>
-        {JSON.stringify(this.state.support)}
+        {/* {JSON.stringify(this.state.support)} */}
         <form onSubmit={this.handleSubmit}>
         <input type="number" placeholder="Support" 
             // value={this.state.Feelings}
