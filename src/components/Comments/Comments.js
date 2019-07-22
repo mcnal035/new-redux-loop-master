@@ -17,7 +17,7 @@ class Support extends Component {
    
     console.log('clicked on add handleSubmit', this.state.comments);
 }
-  handleChangeFor = (PropertyName, event) => {
+  handleChangeFor = ( event) => {
      
       this.setState({
           comments:
@@ -41,7 +41,7 @@ class Support extends Component {
         <form onSubmit={this.handleSubmit}>
         <input type="text" placeholder="Comments" 
             // value={this.state.Feelings}
-            onChange={(event) => this.handleChangeFor('comments', event)}/>
+            onChange={(event) => this.handleChangeFor( event)}/>
         <br/>
         <button>NEXT</button>
         </form>

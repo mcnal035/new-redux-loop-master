@@ -31,7 +31,7 @@ class App extends Component {
       <Router> 
           
          
-          <Route  path='/' render={(props) => <Main {...props} isAuthed={true}/>} />
+          <Route  path='/' exact component={Main} />
           <Route  path='/feeling' render={(props) => <Feeling {...props} isAuthed={true}/>} />
           <Route path='/Understanding/'render= {(props) => <Understanding {...props} isAuthed={true}/>} />
           <Route path='/Support/' render={(props) => <Support {...props} isAuthed={true}/>} />

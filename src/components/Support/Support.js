@@ -11,7 +11,7 @@ class Support extends Component {
           }
          
          
-  handleChangeFor = (PropertyName, event) => {
+  handleChangeFor = ( event) => {
      
             this.setState({
                 support: event.target.value,
@@ -44,7 +44,7 @@ class Support extends Component {
         <form onSubmit={this.handleSubmit}>
         <input type="number" placeholder="Support" 
             // value={this.state.Feelings}
-            onChange={(event) => this.handleChangeFor('support', event)}/>
+            onChange={(event) => this.handleChangeFor( event)}/>
         <br/>
         <button>NEXT</button>
         </form>

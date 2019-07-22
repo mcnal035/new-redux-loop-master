@@ -18,21 +18,21 @@ class Review extends Component {
         })
         
       }
-
+      // conditonal render that checks 
       reviewComplete = () =>{
           if(this.props.reduxStore.totalReview.feeling === 0 ){
               return false;
           }
           if(this.props.reduxStore.totalReview.understanding === 0 ){
             return false;
-        }
-        if(this.props.reduxStore.totalReview.support === 0 ){
+            }
+             if(this.props.reduxStore.totalReview.support === 0 ){
             return false;
-        }
-        if(this.props.reduxStore.totalReview.comments === '' ){
+             }
+             if(this.props.reduxStore.totalReview.comments === '' ){
             return false;
-        }
-        return true;
+             }
+             return true;
       }
       // this renders the buttong to show as complete
       showButton = () => {

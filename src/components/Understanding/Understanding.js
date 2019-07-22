@@ -9,7 +9,7 @@ class Understanding extends Component {
     understanding: 0,
           }
 
-          handleChangeFor = (PropertyName, event) => {
+          handleChangeFor = ( event) => {
      
             this.setState({
                 understanding: 
@@ -42,7 +42,7 @@ class Understanding extends Component {
         <form onSubmit={this.handleSubmit}>
         <input type="number" placeholder="Understanding" 
             //  value={this.understanding}
-            onChange={(event) => this.handleChangeFor('understanding', event)}/>
+            onChange={(event) => this.handleChangeFor( event)}/>
         <br/>
         <button>NEXT</button>
         </form>

@@ -8,7 +8,7 @@ class Feeling extends Component {
       feeling: 0,
             }
     //sets the new value of feeling.
-    handleChangeFor = (PropertyName, event) => {
+    handleChangeFor = (event) => {
         // Do some JavaScript fun stuff
         this.setState({
             feeling: 
@@ -45,7 +45,7 @@ class Feeling extends Component {
         <form onSubmit={this.handleSubmit}>
         <input type="number" placeholder="Feeling" 
             // value={this.state.Feelings}
-            onChange={(event) => this.handleChangeFor('feeling', event)}/>
+            onChange={(event) => this.handleChangeFor(event)}/>
         <br/>
         <button>NEXT</button>
         </form>
