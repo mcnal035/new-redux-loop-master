@@ -30,7 +30,7 @@ class App extends Component {
       
       <Router> 
           
-         
+         {/* Had to run npm run build in  */}
           <Route  path='/' exact component={Main} />
           <Route  path='/feeling' render={(props) => <Feeling {...props} isAuthed={true}/>} />
           <Route path='/Understanding/'render= {(props) => <Understanding {...props} isAuthed={true}/>} />

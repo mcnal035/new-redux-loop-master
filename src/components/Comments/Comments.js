@@ -6,26 +6,26 @@ import {withRouter} from 'react-router';
 class Support extends Component {
   state = {
      comments: '',
-          }
+    }
   
 // function takes the comments and dispatches it to index. Then sends 
         //you to the next page Review.
    handleSubmit = (event) =>{
-    this.props.history.push('/Review');
-    event.preventDefault();
-    this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.comments})
-   
-    console.log('clicked on add handleSubmit', this.state.comments);
-}
+        this.props.history.push('/Review');
+        event.preventDefault();
+        this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.comments})
+      
+        console.log('clicked on add handleSubmit', this.state.comments);
+    }
   handleChangeFor = ( event) => {
      
-      this.setState({
-          comments:
-             event.target.value,
-          
-      })
-     
-    }
+        this.setState({
+            comments:
+              event.target.value,
+            
+        })
+      
+      }
 
 
 

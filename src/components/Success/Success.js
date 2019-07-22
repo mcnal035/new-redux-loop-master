@@ -6,7 +6,7 @@ class Success extends Component {
     handleSubmit = (event)=>{
         event.preventDefault();
         //console.log('clicking on handleSubmit')
-         this.props.history.push('/main');
+         this.props.history.push('/');
       }
 
     render() {
